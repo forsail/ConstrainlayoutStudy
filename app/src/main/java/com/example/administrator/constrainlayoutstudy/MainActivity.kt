@@ -16,10 +16,10 @@ class MainActivity : AppCompatActivity() {
 //        textView.text = "Hello"
 //        textView2.text = "Kotlin"
         rootLayout = relativeLayout {
-            val edtName = editText("gl") {
+            val edtName = editText("java") {
                 id = 1
                 hint = "hello"
-                textSize = 20f
+                textSize = 16f
             }.lparams {
                 alignParentLeft()
                 alignParentRight()
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             editText {
                 id = 2
                 hint = "world"
-                textSize = 20f
+                textSize = 16f;
             }.lparams {
                 alignParentLeft()
                 below(1)
