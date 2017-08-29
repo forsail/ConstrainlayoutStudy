@@ -3,11 +3,13 @@ package com.example.administrator.constrainlayoutstudy
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.EditText
+import android.widget.ListView
 import android.widget.RelativeLayout
 import org.jetbrains.anko.*
 
 class MainActivity : AppCompatActivity() {
     var rootLayout: RelativeLayout? = null
+    var listView: ListView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
                 height = wrapContent
                 padding = 10
                 onClick {
+                    toast(edtName.text)
                     toast("${rootLayout?.find<EditText>(1)?.text}")
                 }
             }.lparams {
@@ -49,16 +52,14 @@ class MainActivity : AppCompatActivity() {
                 alignParentRight()
             }
 
-            button("btn3") {
+            listView = listView {
                 id = 4
-                onClick {
-                    toast(edtName.text)
-                }
             }.lparams {
+                below(3)
                 alignParentBottom()
-                alignParentLeft()
-                alignParentRight()
             }
         }
+
+
     }
 }
